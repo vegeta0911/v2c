@@ -1,0 +1,468 @@
+
+/* ----- En-tête ----- */
+
+.v2c_widget_flat .v2c_header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 6px;
+}
+
+.v2c_widget_flat .v2c_header_title {
+	font-size: 16px;
+	font-weight: bold;
+	color: var(--txt-color) !important;
+}
+
+.v2c_widget_flat .v2c_header_title a {
+	text-decoration: none;
+}
+
+.v2c_widget_flat .v2c_header_badges {
+	display: flex;
+	gap: 5px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	margin: 10px 10px;
+}
+
+.v2c_widget_flat .v2c_badge {
+	display: inline-block;
+	padding: 3px 9px;
+	border-radius: 12px;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: rgba(var(--contrast-color), 0.12);
+	color: var(--txt-color) !important;
+	white-space: nowrap;
+}
+
+.v2c_widget_flat .v2c_badge_blue {
+	background-color: rgba(53, 122, 189, 0.25);
+}
+
+.v2c_widget_flat .v2c_badge_grey {
+	background-color: rgba(var(--contrast-color), 0.12);
+}
+
+.v2c_widget_flat .v2c_badge_green {
+	background-color: rgba(46, 166, 52, 0.25);
+}
+
+.v2c_widget_flat .v2c_badge_red {
+	background-color: rgba(217, 83, 79, 0.25);
+}
+
+/* ----- Corps : deux colonnes ----- */
+
+.v2c_widget_flat .v2c_body {
+	display: flex;
+	gap: 10px;
+}
+
+.v2c_widget_flat .v2c_col_left {
+	width: 190px;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.v2c_widget_flat .v2c_col_right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	min-width: 0;
+}
+
+/* ----- Visuel du chargeur ----- */
+
+.v2c_widget_flat .v2c_visual {
+	border-radius: 12px;
+	background: radial-gradient(circle at 50% 30%, rgba(var(--contrast-color), 0.18), rgba(var(--contrast-color), 0.06));
+	border: 1px solid rgba(var(--contrast-color), 0.18);
+	display: flex;
+	flex-direction: column;
+	flex: max-content;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.4s ease;
+	margin: 0% 2%;
+}
+
+.v2c_widget_flat .v2c_visual_img {
+	max-width: 88%;
+	max-height: 88%;
+	object-fit: contain;
+	filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
+}
+
+.v2c_widget_flat .v2c_visual_icon {
+	font-size: 46px;
+	color: var(--txt-color) !important;
+	opacity: 0.85;
+}
+
+.v2c_widget_flat .v2c_visual.v2c_state_1 {
+	background: radial-gradient(circle at 50% 30%, rgba(230, 162, 60, 0.3), rgba(var(--contrast-color), 0.06));
+}
+
+.v2c_widget_flat .v2c_visual.v2c_state_2 {
+	background: radial-gradient(circle at 50% 30%, rgba(46, 166, 52, 0.35), rgba(var(--contrast-color), 0.06));
+}
+
+.v2c_widget_flat .v2c_visual.v2c_state_2 .v2c_visual_icon {
+	color: #3aa757 !important;
+	opacity: 1;
+}
+
+/* ----- Interrupteurs (switch) ----- */
+
+.v2c_widget_flat .v2c_switch_row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(var(--contrast-color), 0.08);
+	border-radius: 8px;
+	padding: 7px 10px;
+	margin: 0 2%;
+}
+
+.v2c_widget_flat .v2c_switch_label {
+	font-size: 12px;
+	color: var(--txt-color) !important;
+}
+
+.v2c_widget_flat .v2c_switch {
+	position: relative;
+	display: inline-block;
+	width: 38px;
+	height: 20px;
+	border-radius: 12px;
+	background-color: rgba(var(--contrast-color), 0.3);
+	cursor: pointer;
+	transition: background-color 0.25s ease;
+	flex-shrink: 0;
+}
+
+.v2c_widget_flat .v2c_switch_knob {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #fff;
+	transition: left 0.25s ease;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.v2c_widget_flat .v2c_switch.v2c_switch_on {
+	background-color: #3aa757;
+}
+
+.v2c_widget_flat .v2c_switch.v2c_switch_orange.v2c_switch_on {
+	background-color: #e6a23c;
+}
+
+.v2c_widget_flat .v2c_switch.v2c_switch_on .v2c_switch_knob {
+	left: 20px;
+}
+
+/* ----- Ligne de statut + boutons ronds ----- */
+
+.v2c_widget_flat .v2c_status_row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(var(--contrast-color), 0.08);
+	border-radius: 8px;
+	padding: 8px 10px;
+	margin: 0 2%;
+}
+
+.v2c_widget_flat .v2c_status_label {
+	font-size: 13px;
+	font-weight: bold;
+	color: var(--txt-color) !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.v2c_widget_flat .v2c_icon_btn {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: rgba(var(--contrast-color), 0.15);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: var(--txt-color) !important;
+	margin-left: 6px;
+	flex-shrink: 0;
+}
+
+.v2c_widget_flat .v2c_icon_btn:hover {
+	background-color: rgba(var(--contrast-color), 0.28);
+}
+
+.v2c_widget_flat .v2c_icon_btn_active {
+	background-color: rgba(230, 162, 60, 0.35);
+	color: #e6a23c !important;
+}
+
+/* ----- Section "Charge dynamique" ----- */
+
+.v2c_widget_flat .v2c_section {
+	background-color: rgba(var(--contrast-color), 0.05);
+	border: 1px solid rgba(230, 162, 60, 0.35);
+	border-radius: 8px;
+	padding: 8px 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin: 0 2%;
+}
+
+.v2c_widget_flat .v2c_section_title {
+	font-size: 12px;
+	font-weight: bold;
+	color: #e6a23c !important;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.v2c_widget_flat .v2c_section .v2c_switch_row {
+	background-color: transparent;
+	padding: 2px 0px;
+}
+
+.v2c_widget_flat .v2c_select_row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--txt-color) !important;
+}
+
+.v2c_widget_flat .v2c_select {
+	flex: 1;
+	background-color: rgba(var(--contrast-color), 0.1);
+	color: var(--txt-color) !important;
+	border: 1px solid rgba(var(--contrast-color), 0.25);
+	border-radius: 6px;
+	padding: 4px 6px;
+	font-size: 12px;
+}
+
+/* ----- Jauge de puissance ----- */
+
+.v2c_widget_flat .v2c_gauge_card {
+	flex: 1;
+	background-color: rgba(var(--contrast-color), 0.05);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 6px 0 8px 0;
+	margin: 0 2%;
+}
+
+.v2c_widget_flat .v2c_gauge_wrap {
+	width: 160px;
+}
+
+.v2c_widget_flat .v2c_gauge {
+	position: relative;
+	width: 160px;
+	height: 80px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.v2c_widget_flat .v2c_gauge::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	background: conic-gradient(from -90deg, #3aa757 0deg 60deg, #e6a23c 60deg 120deg, #d9534f 120deg 180deg, transparent 180deg 360deg);
+}
+
+.v2c_widget_flat .v2c_gauge_mask {
+	position: absolute;
+	left: 16px;
+	top: 16px;
+	width: 128px;
+	height: 128px;
+	border-radius: 50%;
+	background-color: rgb(var(--bg-color));
+}
+
+.v2c_widget_flat .v2c_gauge_needle {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 2px;
+	height: 68px;
+	margin-left: -1px;
+	background-color: var(--txt-color);
+	transform-origin: bottom center;
+	transform: rotate(-90deg);
+	transition: transform 0.5s ease;
+}
+
+.v2c_widget_flat .v2c_gauge_value {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 4px;
+	font-size: 20px;
+	font-weight: bold;
+	color: var(--txt-color) !important;
+	text-align: center;
+	line-height: 1.1;
+}
+
+.v2c_widget_flat .v2c_gauge_caption {
+	font-size: 11px;
+	opacity: 0.65;
+	color: var(--txt-color) !important;
+	text-align: center;
+}
+
+/* ----- Bas de widget : intensité + slider ----- */
+
+.v2c_widget_flat .v2c_bottom {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background-color: rgba(var(--contrast-color), 0.08);
+	border-radius: 8px;
+	padding: 8px 10px;
+	margin: 2% 1%;
+}
+
+.v2c_widget_flat .v2c_bottom_left {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-shrink: 0;
+	color: var(--txt-color) !important;
+}
+
+.v2c_widget_flat .v2c_bottom_title {
+	font-size: 10px;
+	opacity: 0.7;
+}
+
+.v2c_widget_flat .v2c_bottom_value {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.v2c_widget_flat .v2c_bottom_right {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.v2c_widget_flat .v2c_slider_val {
+	font-size: 11px;
+	font-weight: bold;
+	color: var(--txt-color) !important;
+	min-width: 32px;
+	text-align: right;
+}
+
+.v2c_widget_flat .v2c_slider {
+	flex: 1;
+	-webkit-appearance: none;
+	appearance: none;
+	height: 6px;
+	border-radius: 3px;
+	background: rgba(var(--contrast-color), 0.25);
+	outline: none;
+}
+
+.v2c_widget_flat .v2c_slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #357abd;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.v2c_widget_flat .v2c_slider::-moz-range-thumb {
+	width: 16px;
+	height: 16px;
+	border: none;
+	border-radius: 50%;
+	background-color: #357abd;
+	cursor: pointer;
+}
+
+/* ----- Chargeur injoignable ----- */
+
+.v2c_widget_flat.v2c_offline {
+	opacity: 0.55;
+	filter: grayscale(60%);
+}
+
+/* ----- Mesures par phase (firmware V2C >= 2.5.0) ----- */
+
+.v2c_widget_flat .v2c_phases {
+	margin-top: 10px;
+	padding-top: 8px;
+	border-top: 1px solid rgba(var(--contrast-color), 0.15);
+}
+
+.v2c_widget_flat .v2c_phase_head {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	opacity: 0.7;
+	margin-bottom: 6px;
+}
+
+.v2c_widget_flat .v2c_phase_grid {
+	display: flex;
+	gap: 6px;
+    margin: 2% 1%;
+}
+
+.v2c_widget_flat .v2c_phase_cell {
+	flex: 1;
+	text-align: center;
+	padding: 6px 4px;
+	border-radius: 6px;
+	background: rgba(var(--contrast-color), 0.08);
+}
+
+.v2c_widget_flat .v2c_phase_name {
+	font-size: 10px;
+	font-weight: bold;
+	opacity: 0.6;
+}
+
+.v2c_widget_flat .v2c_phase_val {
+	font-size: 14px;
+	font-weight: bold;
+	color: var(--txt-color) !important;
+}
+
+.v2c_widget_flat .v2c_phase_sub {
+	font-size: 11px;
+	opacity: 0.7;
+}

@@ -1,0 +1,495 @@
+<div class="eqLogic eqLogic-widget  v2c_widget_flat v2c_widget_flat_#id# v2c text-center allowResize allowReorderCmd #custom_layout# #eqLogic_class# #class# #category#" data-eqType="#eqType#" data-eqLogic_id="#id#" data-eqLogic_uid="#uid#" data-version="#version#" data-translate-category="#translate_category#" data-category="#category#" data-tags="#tags#" style="width: #width#;height: #height#;#style#">
+  	<div class="widget-name">
+    	<span style="color:#background-color#" title="#alert_name#">
+      		<i class='#alert_icon#'></i>
+    	</span>
+    	<span class="cmd refresh pull-right cursor" data-cmd_id="#refresh_id#" onclick="jeedom.cmd.execute({id: #refresh_id#});">
+      		<i class="fas fa-sync"></i>
+    	</span>
+    	<span class="reportModeVisible">#name_display# <span class="object_name">#object_name#</span></span>
+    		<a href="#eqLink#" class="reportModeHidden">#name_display# <span class="object_name">#object_name#</span></a>
+  		</div>
+		<div class="v2c_header_badges">
+			<span class="v2c_badge v2c_badge_blue"><span class="Cmd#voltage_installation_id#"></span> V</span>
+			<span class="v2c_badge v2c_badge_grey"><span class="Cmd#charge_time_id#"></span></span>
+			<span class="v2c_badge" id="v2c_freshBadge#id#">-</span>
+			<span class="v2c_badge v2c_badge_blue Cmd#charge_mode_label_id#"></span>
+			<!--span class="Cmd#locked_id#"></span>
+			<span class="Cmd#paused_id#"></span-->
+		</div>
+	
+
+	<div class="v2c_body">
+
+		<div class="v2c_col_left">
+			<div class="v2c_visual" id="v2c_visual#id#">
+				<img id="charge_img#id#" style="max-width:220px;" src=""/>
+				<div class="v2c_visual_brand">V2C TRYDAN</div>
+			</div>
+            <div class="v2c_status_row">
+				<span class="v2c_status_label"><span class="Cmd#charge_state_label_id#"></span></span>
+				<!--span class="v2c_icon_btn" title="Rafraîchir" onclick="v2cExecuteAction#id#(#refresh_id#);"><i class="fas fa-sync"></i></span-->
+				<span class="v2c_icon_btn" id="v2c_pauseIconBtn#id#" data-state="0" title="Mettre en pause" onclick="v2cTogglePause#id#();"><i class="fas fa-pause"></i></span>
+			</div>
+			<div class="v2c_switch_row">
+				<span class="v2c_switch_label"><i class="fas fa-lock"></i> Bloquer</span>
+				<span class="v2c_switch" id="v2c_lockSwitch#id#" data-state="0" onclick="v2cToggleLock#id#();"><span class="v2c_switch_knob"></span></span>
+			</div>
+			<div class="v2c_section">
+				<div class="v2c_section_title">Charge dynamique</div>
+
+				<div class="v2c_switch_row">
+					<span class="v2c_switch_label"><i class="fas fa-bolt"></i> Activer / désactiver</span>
+					<span class="v2c_switch v2c_switch_orange" id="v2c_dynSwitch#id#" data-state="0" onclick="v2cToggleDynamic#id#();"><span class="v2c_switch_knob"></span></span>
+				</div>
+			</div>
+
+			<div class="v2c_section">
+				<div class="v2c_section_title">Mode de charge</div>
+
+				<div class="v2c_select_row">
+					<i class="fas fa-plug"></i>
+					<select id="v2c_chargeModeSelect#id#" class="v2c_select" onchange="jeedom.cmd.execute({ id: #set_charge_mode_id#, value: { select: parseInt(this.value, 10) }, success: function (result) { jeedomUtils.showAlert({ message: result, level: 'success' }); }, error: function (error) { jeedomUtils.showAlert({ message: error.message, level: 'danger' }); } });">
+						#charge_mode_options#
+					</select>
+				</div>
+			</div>
+		</div>
+        
+		<div class="v2c_col_right">
+            <div class="v2c_gauge_card">
+				<div class="v2c_gauge_wrap">
+					<div class="v2c_gauge">
+						<div class="v2c_gauge_mask"></div>
+						<div class="v2c_gauge_needle" id="v2c_gaugeNeedleMaison#id#"></div>
+						<div class="v2c_gauge_value"><span class="Cmd#house_power_id#"></span> W</div>
+					</div>
+				</div>
+				<div class="v2c_gauge_caption">puissance maison</div>
+			</div>
+			<div class="v2c_gauge_card">
+				<div class="v2c_gauge_wrap">
+					<div class="v2c_gauge">
+						<div class="v2c_gauge_mask"></div>
+						<div class="v2c_gauge_needle" id="v2c_gaugeNeedle#id#"></div>
+						<div class="v2c_gauge_value"><span class="Cmd#charge_power_id#"></span> W</div>
+					</div>
+				</div>
+				<div class="v2c_gauge_caption">puissance de charge</div>
+			</div>
+			<div class="v2c_gauge_card">
+				<div class="v2c_gauge_wrap">
+					<div class="v2c_gauge">
+						<div class="v2c_gauge_mask"></div>
+						<div class="v2c_gauge_needle" id="v2c_gaugeNeedle#id#"></div>
+						<div class="v2c_gauge_value"><span class="Cmd#charge_power_id#"></span> W</div>
+					</div>
+				</div>
+				<div class="v2c_gauge_caption">puissance de charge</div>
+			</div>
+
+		</div>
+	</div>
+    <div class="v2c_bottom">
+		<div class="v2c_bottom_left">
+			<i class="fas fa-bolt icon_yellow"></i>
+			<div>
+				<div class="v2c_bottom_title">Limite charge</div>
+				<div class="v2c_bottom_value"><span class="Cmd#charge_limited_power_id#"></span> %</div>
+			</div>
+		</div>
+		<div class="v2c_bottom_right">
+			<span class="v2c_slider_val" id="v2c_chargeSliderVal#id#">-</span>
+			<input type="range" id="v2c_chargeLimiteSlider#id#" class="v2c_slider" min="80" max="100" step="1" value="80" oninput="v2ChargeLimiteInput#id#(this.value);" onchange="v2cChargelimiteChange#id#(this.value);">
+		</div>
+	</div>
+	<div class="v2c_bottom">
+		<div class="v2c_bottom_left">
+			<i class="fas fa-bolt icon_yellow"></i>
+			<div>
+				<div class="v2c_bottom_title">Intensité minimale</div>
+				<div class="v2c_bottom_value"><span class="Cmd#min_intensity_id#"></span> A</div>
+			</div>
+		</div>
+		<div class="v2c_bottom_right">
+			<span class="v2c_slider_val" id="v2c_minSliderVal#id#">-</span>
+			<input type="range" id="v2c_minIntensitySlider#id#" class="v2c_slider" min="6" max="16" step="1" value="6" oninput="v2cMinIntensityInput#id#(this.value);" onchange="v2cMinIntensityChange#id#(this.value);">
+		</div>
+	</div>
+	<div class="v2c_bottom">
+		<div class="v2c_bottom_left">
+			<i class="fas fa-bolt icon_yellow"></i>
+			<div>
+				<div class="v2c_bottom_title">Intensité maximale</div>
+				<div class="v2c_bottom_value"><span class="Cmd#max_intensity_id#"></span> A</div>
+			</div>
+		</div>
+		<div class="v2c_bottom_right">
+			<span class="v2c_slider_val" id="v2c_maxSliderVal#id#">-</span>
+			<input type="range" id="v2c_maxIntensitySlider#id#" class="v2c_slider" min="6" max="32" step="1" value="32" oninput="v2cMaxIntensityInput#id#(this.value);" onchange="v2cMaxIntensityChange#id#(this.value);">
+		</div>
+	</div>
+	<div class="v2c_phases" id="v2c_phases#id#">
+		<div class="v2c_phase_head">
+			<i class="fas fa-plug"></i> <span class="Cmd#charge_mode_label_id#"></span>
+		</div>
+		<div class="v2c_phase_grid">
+			<div class="v2c_phase_cell">
+				<div class="v2c_phase_name">L1</div>
+				<div class="v2c_phase_val"><span class="Cmd#intensity_l1_id#">-</span> A</div>
+				<div class="v2c_phase_sub"><span class="Cmd#voltage_l1_id#">-</span> V</div>
+			</div>
+			<div class="v2c_phase_cell">
+				<div class="v2c_phase_name">L2</div>
+				<div class="v2c_phase_val"><span class="Cmd#intensity_l2_id#">-</span> A</div>
+				<div class="v2c_phase_sub"><span class="Cmd#voltage_l2_id#">-</span> V</div>
+			</div>
+			<div class="v2c_phase_cell">
+				<div class="v2c_phase_name">L3</div>
+				<div class="v2c_phase_val"><span class="Cmd#intensity_l3_id#">-</span> A</div>
+				<div class="v2c_phase_sub"><span class="Cmd#voltage_l3_id#">-</span> V</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12" id="column" style="height:25px; width:385px;">
+				<div id="last_update">Version du firmware installé : <span class="Cmd#firmware_version_id# state"></span></div>
+			</div>	
+
+</div>
+
+<script>
+    document.getElementById('charge_img#id#').src = 'plugins/v2c/data/images/v2c-trydan.png';
+	//----- Initialisation du CSS (avec cache-busting sur la date de modification du fichier)
+	var v2cCssHref = 'plugins/v2c/core/template/dashboard/v2c_dashboard.css?v=#css_version#';
+	var v2cExistingStyle = document.querySelector('link[data-v2c-style]');
+	if (!v2cExistingStyle) {
+		var styleLink = document.createElement('link');
+		styleLink.type = 'text/css';
+		styleLink.rel = 'stylesheet';
+		styleLink.href = v2cCssHref;
+		styleLink.setAttribute('data-v2c-style', '1');
+		document.head.appendChild(styleLink);
+	} else if (v2cExistingStyle.getAttribute('href') !== v2cCssHref) {
+		v2cExistingStyle.setAttribute('href', v2cCssHref);
+	}
+
+	function v2cExecuteAction#id#(cmdId) {
+		jeedom.cmd.execute({
+			id: cmdId,
+			success: function (result) {
+				jeedomUtils.showAlert({ message: result, level: 'success' });
+			},
+			error: function (error) {
+				jeedomUtils.showAlert({ message: error.message, level: 'danger' });
+			}
+		});
+	}
+
+	function v2cTogglePause#id#() {
+		var isPaused = $('#v2c_pauseIconBtn#id#').attr('data-state') == '1';
+		v2cExecuteAction#id#(isPaused ? #resume_charge_id# : #pause_charge_id#);
+	}
+
+	function v2cToggleLock#id#() {
+		var isLocked = $('#v2c_lockSwitch#id#').attr('data-state') == '1';
+		v2cExecuteAction#id#(isLocked ? #unlock_charger_id# : #lock_charger_id#);
+	}
+
+	function v2cToggleDynamic#id#() {
+		var isDynamic = $('#v2c_dynSwitch#id#').attr('data-state') == '1';
+		v2cExecuteAction#id#(isDynamic ? #disable_dynamic_id# : #enable_dynamic_id#);
+	}
+
+	function v2cChangeMode#id#(value) {
+		jeedom.cmd.execute({
+			id: #set_dynamic_power_mode_id#,
+			value: { select: parseInt(value, 10) },
+			success: function (result) {
+				jeedomUtils.showAlert({ message: result, level: 'success' });
+			},
+			error: function (error) {
+				jeedomUtils.showAlert({ message: error.message, level: 'danger' });
+			}
+		});
+	}
+
+	//----- Sliders intensité min / max : ils reflètent les valeurs renvoyées par le
+	//      chargeur (commandes min_intensity / max_intensity), qui les mémorise.
+	function v2cClampToSlider(value, $s) {
+		var min = parseFloat($s.attr('min')) || 6;
+		var max = parseFloat($s.attr('max')) || 32;
+		return Math.max(min, Math.min(max, parseInt(value, 10) || min));
+	}
+    
+	function v2cLimiteToSlider(value, $s) {
+		var min = parseFloat($s.attr('min')) || 80;
+		var max = parseFloat($s.attr('max')) || 100;
+		return Math.max(min, Math.min(max, parseInt(value, 10) || min));
+	}
+
+	function v2cApplyMinIntensityToSlider#id#(value) {
+		var $s = $('#v2c_minIntensitySlider#id#');
+		value = v2cClampToSlider(value, $s);
+		$s.val(value);
+		$('#v2c_minSliderVal#id#').text(value + ' A');
+	}
+
+	function v2cApplyChargeLimiteToSlider#id#(value) {
+		var $s = $('#v2c_chargeLimiteSlider#id#');
+		value = v2cLimiteToSlider(value, $s);
+		$s.val(value);
+		$('#v2c_chargeSliderVal#id#').text(value + ' %');
+	}
+
+	function v2cApplyMaxIntensityToSlider#id#(value) {
+		var $s = $('#v2c_maxIntensitySlider#id#');
+		value = v2cClampToSlider(value, $s);
+		$s.val(value);
+		$('#v2c_maxSliderVal#id#').text(value + ' A');
+	}
+
+	function v2ChargeLimiteInput#id#(value) {
+		$('#v2c_chargeSliderVal#id#').text(value + ' %');
+	}
+
+	function v2cMinIntensityInput#id#(value) {
+		$('#v2c_minSliderVal#id#').text(value + ' A');
+	}
+
+	function v2cMaxIntensityInput#id#(value) {
+		$('#v2c_maxSliderVal#id#').text(value + ' A');
+	}
+
+	function v2cSendIntensity#id#(cmdId, value) {
+		jeedom.cmd.execute({
+			id: cmdId,
+			value: { slider: parseInt(value, 10) },
+		});
+	}
+    
+	function v2cChargelimiteChange#id#(value) {
+		v2cSendIntensity#id#(#set_charge_limited_power_id#, value);
+	}
+
+	function v2cMinIntensityChange#id#(value) {
+		v2cSendIntensity#id#(#set_min_intensity_id#, value);
+	}
+
+	function v2cMaxIntensityChange#id#(value) {
+		v2cSendIntensity#id#(#set_max_intensity_id#, value);
+	}
+
+	//----- Jauge de puissance : calcule la puissance max théorique (Imax x Tension)
+	var v2c_maxIntensity#id# = parseFloat('#max_intensity#') || 32;
+	var v2c_voltage#id# = parseFloat('#voltage_installation#') || 230;
+     
+	function v2cUpdateGaugeMaison#id#(power) {
+		var maxPower = v2c_maxIntensity#id# * v2c_voltage#id#;
+		if (!maxPower || maxPower <= 0) { maxPower = 7360; }
+		var pct = #house_power#;
+		console.log('v2cUpdateGauge#id#: power=' + pct + ', maxPower=' + maxPower);
+		$('#v2c_gaugeNeedleMaison#id#').css('transform', 'rotate(' + (-90 + ((pct / maxPower * 100) / 100 * 180)) + 'deg)');
+	}
+
+	function v2cUpdateGauge#id#(power) {
+		var maxPower = v2c_maxIntensity#id# * v2c_voltage#id#;
+		if (!maxPower || maxPower <= 0) { maxPower = 7360; }
+		var pct = Math.max(0, Math.min(100, (power / maxPower) * 100));
+		$('#v2c_gaugeNeedle#id#').css('transform', 'rotate(' + (-90 + (pct / 100 * 180)) + 'deg)');
+	}
+    
+	//----- Visibilité du bloc "Mesures par phase" : masqué en monophasé, et tant que
+	//      le chargeur n'a renvoyé aucune mesure de phase (firmware < 2.5.0).
+	var v2cChargeModeLabel#id# = '#charge_mode_label#';
+	var v2cPhaseHasData#id# = false;
+	var dashboard_height;
+	['#intensity_l1#', '#intensity_l2#', '#intensity_l3#', '#voltage_l1#', '#voltage_l2#', '#voltage_l3#'].forEach(function (v) {
+		if (v !== '' && v !== null && !isNaN(parseFloat(v))) { v2cPhaseHasData#id# = true;}
+		
+	});
+
+	function v2cRefreshPhases#id#() {
+	    $('#v2c_phases#id#').toggle(v2cChargeModeLabel#id# !== 'Monophasé' && v2cPhaseHasData#id#);
+		
+	}
+	v2cRefreshPhases#id#();
+	
+     updateDisplayDashboard#id#();
+
+		
+//----- Dashboard display update
+	function updateDisplayDashboard#id#()  {
+	jeedom.cmd.update['#firmware_version_id#'] = function(_options) {
+			if ( _options.display_value == "")  { 
+				$('.Cmd#firmware_version_id#').empty().append('<span>'+"inconnue"+'</span>'); 
+		    }
+			else 
+			{ 
+				$('.Cmd#firmware_version_id#').empty().append('<span>'+_options.display_value+'</span>'); }
+			}
+			jeedom.cmd.update['#firmware_version_id#']({display_value:'#firmware_version#'});
+		
+	//----- Mise à jour live du texte / couleur du bandeau d'état
+	jeedom.cmd.update['#charge_state_id#'] = function (_options) {
+		$('.v2c_widget_flat_#id# .v2c_visual').removeClass('v2c_state_0 v2c_state_1 v2c_state_2').addClass('v2c_state_' + _options.display_value);
+	}
+	jeedom.cmd.update['#charge_state_id#']({ display_value: '#charge_state#' });
+
+	//----- Mise à jour live de la puissance de charge (jauge + barre de progression)
+	jeedom.cmd.update['#house_power_id#'] = function (_options) {
+		var power = parseFloat(_options.display_value) || 0;
+		$('.Cmd#house_power_id#').text(power);
+		v2cUpdateGaugeMaison#id#(power);
+	}
+	jeedom.cmd.update['#house_power_id#']({ display_value: '#house_power#' });
+	
+
+	jeedom.cmd.update['#charge_power_id#'] = function (_options) {
+		var power = parseFloat(_options.display_value) || 0;
+		$('.Cmd#charge_power_id#').text(power);
+		v2cUpdateGauge#id#(power);
+	}
+	jeedom.cmd.update['#charge_power_id#']({ display_value: '#charge_power#' });
+
+	//----- Mise à jour live de la tension (jauge) et de l'intensité max (slider)
+	jeedom.cmd.update['#voltage_installation_id#'] = function (_options) {
+		$('.Cmd#voltage_installation_id#').text(_options.display_value);
+		v2c_voltage#id# = parseFloat(_options.display_value) || 230;
+	}
+	jeedom.cmd.update['#voltage_installation_id#']({ display_value: '#voltage_installation#' });
+
+	jeedom.cmd.update['#max_intensity_id#'] = function (_options) {
+		$('.Cmd#max_intensity_id#').text(_options.display_value);
+		var v = parseFloat(_options.display_value) || 32;
+		v2c_maxIntensity#id# = v;
+		if (!$('#v2c_maxIntensitySlider#id#').is(':active')) {
+			v2cApplyMaxIntensityToSlider#id#(v);
+		}
+	}
+	jeedom.cmd.update['#max_intensity_id#']({ display_value: '#max_intensity#' });
+
+	jeedom.cmd.update['#min_intensity_id#'] = function (_options) {
+		$('.Cmd#min_intensity_id#').text(_options.display_value);
+		var v = parseInt(_options.display_value, 10);
+		if (!isNaN(v) && !$('#v2c_minIntensitySlider#id#').is(':active')) {
+			v2cApplyMinIntensityToSlider#id#(v);
+		}
+	}
+     jeedom.cmd.update['#min_intensity_id#']({ display_value: '#min_intensity#' });
+
+	jeedom.cmd.update['#charge_limited_power_id#'] = function (_options) {
+		$('.Cmd#charge_limited_power_id#').text(_options.display_value);
+		var v = parseInt(_options.display_value, 10);
+		if (!isNaN(v) && !$('#v2c_chargeLimiteSlider#id#').is(':active')) {
+			v2cApplyChargeLimiteToSlider#id#(v);
+		}
+	}
+    jeedom.cmd.update['#charge_limited_power_id#']({ display_value: '#charge_limited_power#' });
+    
+    jeedom.cmd.update['#set_charge_limited_power_id#'] = function (_options) {
+		$('.Cmd#set_charge_limited_power_id#').text(_options.display_value);
+	}
+    jeedom.cmd.update['#set_charge_limited_power_id#']({ display_value: '#set_charge_limited_power#' });
+   
+
+	//----- Mise à jour live du texte de durée / tension / état
+	jeedom.cmd.update['#charge_time_id#'] = function (_options) {
+		$('.Cmd#charge_time_id#').text(_options.display_value);
+	}
+	jeedom.cmd.update['#charge_time_id#']({ display_value: '#charge_time#' });
+
+	jeedom.cmd.update['#charge_state_label_id#'] = function (_options) {
+		$('.Cmd#charge_state_label_id#').text(_options.display_value);
+	}
+	jeedom.cmd.update['#charge_state_label_id#']({ display_value: '#charge_state_label#' });
+
+	//----- Mise à jour live de la disponibilité (badge + widget grisé si injoignable)
+	jeedom.cmd.update['#connectivity_id#'] = function (_options) {
+		if (_options.display_value == '0') {
+			$('.v2c_widget_flat_#id#').addClass('v2c_offline');
+			$('#v2c_freshBadge#id#').text('Injoignable').removeClass('v2c_badge_green').addClass('v2c_badge_red');
+		} else {
+			$('.v2c_widget_flat_#id#').removeClass('v2c_offline');
+			$('#v2c_freshBadge#id#').text('Connecté').removeClass('v2c_badge_red').addClass('v2c_badge_green');
+		}
+	}
+	jeedom.cmd.update['#connectivity_id#']({ display_value: '#connectivity#' });
+
+	//----- Mise à jour live des interrupteurs (pause / verrouillage / dynamique)
+	jeedom.cmd.update['#paused_id#'] = function (_options) {
+		var isPaused = _options.display_value == '1';
+		$('#v2c_pauseIconBtn#id#').attr('data-state', isPaused ? '1' : '0').toggleClass('v2c_icon_btn_active', isPaused);
+		$('#v2c_pauseIconBtn#id# i').attr('class', isPaused ? 'fas fa-play' : 'fas fa-pause');
+		$('#v2c_pauseIconBtn#id#').attr('title', isPaused ? "Reprendre la charge" : "Mettre en pause");
+		if ( isPaused == "1" )  {
+			$('.Cmd#paused_id#').empty().append('<span class="v2c_badge v2c_badge_red"><span>Charge en pause</span></span>');
+		}
+		if ( isPaused == "0" )  {
+			$('.Cmd#paused_id#').empty().append('<span class="v2c_badge v2c_badge_green"><span>Charge active</span></span>');
+		}
+	}
+	jeedom.cmd.update['#paused_id#']({ display_value: '#paused#' });
+
+	jeedom.cmd.update['#locked_id#'] = function (_options) {
+		var isLocked = _options.display_value == '1';
+		$('#v2c_lockSwitch#id#').attr('data-state', isLocked ? '1' : '0').toggleClass('v2c_switch_on', isLocked);
+		if ( isLocked == "1" )  {
+			$('.Cmd#locked_id#').empty().append('<span class="v2c_badge v2c_badge_red"><span>Verrouiller</span></span>');
+		}
+		if ( isLocked == "0" )  {
+			$('.Cmd#locked_id#').empty().append('<span class="v2c_badge v2c_badge_green"><span>Déverrouiller</span></span>');
+		}
+	}
+	jeedom.cmd.update['#locked_id#']({ display_value: '#locked#' });
+
+	jeedom.cmd.update['#dynamic_id#'] = function (_options) {
+		var isDynamic = _options.display_value == '1';
+		$('#v2c_dynSwitch#id#').attr('data-state', isDynamic ? '1' : '0').toggleClass('v2c_switch_on', isDynamic);
+	}
+	jeedom.cmd.update['#dynamic_id#']({ display_value: '#dynamic#' });
+
+	jeedom.cmd.update['#dynamic_power_mode_id#'] = function (_options) {
+		$('#v2c_modeSelect#id#').val(_options.display_value);
+	}
+	jeedom.cmd.update['#dynamic_power_mode_id#']({ display_value: '#dynamic_power_mode#' });
+
+	//----- Mesures par phase (firmware V2C >= 2.5.0). Le bloc reste masqué tant que
+	//      le chargeur ne renvoie pas ces champs.
+	
+
+	['#intensity_l1_id#', '#intensity_l2_id#', '#intensity_l3_id#', '#voltage_l1_id#', '#voltage_l2_id#', '#voltage_l3_id#'].forEach(function (cmdId) {
+		jeedom.cmd.update[cmdId] = function (_options) {
+			$('.Cmd' + cmdId).text(_options.display_value);
+			if (_options.display_value !== '' && _options.display_value !== null && !isNaN(parseFloat(_options.display_value))) {
+				v2cPhaseHasData#id# = true;
+				v2cRefreshPhases#id#();
+			}
+		};
+	});
+
+	jeedom.cmd.update['#charge_mode_label_id#'] = function (_options) {
+		$('.Cmd#charge_mode_label_id#').text(_options.display_value);
+		v2cChargeModeLabel#id# = _options.display_value;
+		v2cRefreshPhases#id#();
+		if(v2cChargeModeLabel#id# == 'Monophasé'){
+
+		dashboard_height = 780;
+	}
+	else if(v2cChargeModeLabel#id# != 'Monophasé'){
+		dashboard_height = 880;
+	}
+    $('.v2c_widget_flat_#id#').css('min-height', dashboard_height);
+	$('.v2c_widget_flat_#id#').css('max-height', dashboard_height);
+		
+	}
+	jeedom.cmd.update['#charge_mode_label_id#']({ display_value: '#charge_mode_label#' });
+    
+	//----- Synchronise le sélecteur "Mode de charge" avec la valeur connue du chargeur
+	jeedom.cmd.update['#charge_mode_id#'] = function (_options) {
+		$('#v2c_chargeModeSelect#id#').val(_options.display_value);
+	}
+	jeedom.cmd.update['#charge_mode_id#']({ display_value: '#charge_mode#' });
+}
+	
+
+</script>
