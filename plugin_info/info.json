@@ -1,0 +1,25 @@
+{
+	"id": "v2c",
+	"name": "V2C Trydan",
+	"description": {
+		"fr_FR": "Plugin Jeedom pour la borne de recharge de véhicule électrique V2C Trydan. Récupère en lecture seule, via l'API HTTP locale du chargeur (aucun cloud requis), la puissance de charge, l'intensité, l'énergie de session, l'état de branchement, la production photovoltaïque et les informations de communication du chargeur."
+	},
+	"licence": "AGPL",
+	"author": "vegeta0911",
+	"require": "4.4",
+	"os": {
+		"min": 11
+	},
+	"category": "energy",
+	"hasDependency": false,
+	"hasOwnDeamon": false,
+	"maxDependancyInstallTime": 0,
+	"changelog": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2C/changelog",
+	"documentation": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2C/",
+	"language": ["fr_FR"],
+	"compatibility": [
+		"diy",
+		"docker",
+		"v4"
+	]
+}
