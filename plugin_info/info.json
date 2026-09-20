@@ -14,8 +14,8 @@
 	"hasDependency": false,
 	"hasOwnDeamon": false,
 	"maxDependancyInstallTime": 0,
-	"changelog": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2C/changelog",
-	"documentation": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2C/",
+	"changelog": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2c/changelog",
+	"documentation": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2c/",
 	"language": ["fr_FR"],
 	"compatibility": [
 		"diy",
