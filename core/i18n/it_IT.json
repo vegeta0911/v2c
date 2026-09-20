@@ -1,0 +1,46 @@
+{
+    "plugins\/v2c\/core\/ajax\/v2c.ajax.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato"
+    },
+    "plugins\/v2c\/core\/class\/v2c.class.php": {
+        "Inconnu": "Sconosciuto"
+    },
+    "plugins\/v2c\/desktop\/js\/v2c.js": {
+        "Afficher": "Mostra",
+        "Choisir une icône": "Seleziona un\\'icona",
+        "Connexion réussie": "Connessione avvenuta con successo",
+        "Historiser": "Storicizza",
+        "Max": "Max",
+        "Min": "Min",
+        "Tester": "Prova",
+        "Unité": "Unità"
+    },
+    "plugins\/v2c\/desktop\/php\/v2c.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato",
+        "Actions": "Stock",
+        "Activer": "Attivare",
+        "Aucun": "Nessuno",
+        "Catégorie": "Categoria",
+        "Commandes": "Comandi",
+        "Configuration": "Configurazione",
+        "Configuration avancée": "Configurazione avanzata",
+        "Dupliquer": "Duplicato",
+        "Défaut": "Predefinito",
+        "Etat": "Stato",
+        "Gestion": "Gestione",
+        "Informations": "Informazioni",
+        "Nom": "Nome",
+        "Objet parent": "Oggetto padre",
+        "Options": "Opzioni",
+        "Port": "Porta",
+        "Rechercher": "Ricercare",
+        "Sauvegarder": "Salva",
+        "Supprimer": "Elimina",
+        "Timeout": "Timeout",
+        "Type": "Tipo",
+        "Visible": "Visibile"
+    },
+    "plugins\/v2c\/plugin_info\/configuration.php": {
+        "Rechercher une commande": "Cerca un comando"
+    }
+}
