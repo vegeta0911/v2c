@@ -37,7 +37,9 @@ if (!isConnect()) {
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">{{Veuillez choisir la méthode de communication}}</label>
+            <label class="col-sm-4 control-label">{{Commande statue batterie}}
+			    <sup><i class="fas fa-question-circle floatright" title="{{Mettre la commande de pourcentage de la batterie sur la voiture electrique.}}"></i></sup>
+			</label>
 			<div class="col-sm-3">
                 <div class="input-group">
 			        <input class="configKey form-control paramAttr roundedLeft" data-l1key="reply" placeholder="" />
