@@ -38,9 +38,20 @@
         "Supprimer": "Entfernen",
         "Timeout": "Zeitüberschreitung",
         "Type": "Typ",
-        "Visible": "Sichtbar"
+        "Visible": "Sichtbar",
+        "Intervalle de rafraîchissement": "Aktualisierungsintervall",
+        "Renseignez l'adresse IP locale de votre chargeur V2C Trydan (voir votre routeur ou l'application V2C). Aucun compte cloud n'est nécessaire, la communication se fait directement en réseau local.": "Geben Sie die lokale IP-Adresse Ihres V2C Trydan-Ladegeräts ein (siehe Ihren Router oder die V2C-App). Kein Cloud-Konto erforderlich, die Kommunikation erfolgt direkt im lokalen Netzwerk.",
+        "En secondes. Laisser vide ou 0 pour utiliser la valeur par défaut définie dans la configuration du plugin": "In Sekunden. Lassen Sie es leer oder 0, um den Standardwert zu verwenden, der in der Plugin-Konfiguration festgelegt ist",
+        "Délai maximum d'attente de la réponse du chargeur, en secondes": "Maximale Wartezeit auf die Antwort des Ladegeräts in Sekunden"
     },
     "plugins\/v2c\/plugin_info\/configuration.php": {
-        "Rechercher une commande": "Suchen Sie nach einer Bestellung"
+        "Rechercher une commande": "Suchen Sie nach einer Bestellung",
+        "Commande status batterie": "Batteriestatus-Befehl",
+        "secondes": "Sekunden",
+        "Configuration générale": "Allgemeine Konfiguration",
+        "Fréquence de rafraîchissement par défaut": "Standard-Aktualisierungsrate",
+        "Intervalle en secondes utilisé par défaut pour interroger chaque chargeur, sauf si un intervalle spécifique est défini sur l'équipement.": "Intervall in Sekunden, das standardmäßig verwendet wird, um jeden Ladegerät abzufragen, es sei denn, ein bestimmtes Intervall ist auf dem Gerät festgelegt.",
+        "Charge dynamique": "Dynamisches Laden",
+        "Mettre la commande de pourcentage de la batterie de votre voiture électrique.": "Legen Sie den Befehl für den Batteriestand Ihres Elektroautos fest."
     }
 }
