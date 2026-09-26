@@ -2,13 +2,18 @@
     "plugins\/v2c\/core\/ajax\/v2c.ajax.php": {
         "401 - Accès non autorisé": "401 - Unauthorized access"
     },
+
     "plugins\/v2c\/core\/class\/v2c.class.php": {
         "Inconnu": "Unknown"
     },
+
     "plugins\/v2c\/desktop\/js\/v2c.js": {
         "Afficher": "Show",
         "Choisir une icône": "Choose an icon",
         "Connexion réussie": "Connection successful",
+        "Connexion échouée": "Connection failed",
+        "Connexion en cours": "Connecting",
+        "Connexion impossible": "Connection impossible",
         "Historiser": "Historize",
         "Max": "Maximum",
         "Min": "Minimum",
@@ -38,9 +43,20 @@
         "Supprimer": "Delete",
         "Timeout": "Timeout",
         "Type": "Kind",
-        "Visible": "Visible"
+        "Intervalle de rafraîchissement": "Refresh interval",
+        "Renseignez l'adresse IP locale de votre chargeur V2C Trydan (voir votre routeur ou l'application V2C). Aucun compte cloud n'est nécessaire, la communication se fait directement en réseau local.": " Enter the local IP address of your V2C Trydan charger (see your router or the V2C app). No cloud account is required, communication is done directly on the local network.",
+        "En secondes. Laisser vide ou 0 pour utiliser la valeur par défaut définie dans la configuration du plugin": "In seconds. Leave blank or 0 to use the default value set in the plugin configuration",
+        "Délai maximum d'attente de la réponse du chargeur, en secondes": "Maximum waiting time for the charger's response, in seconds"
     },
+
     "plugins\/v2c\/plugin_info\/configuration.php": {
-        "Rechercher une commande": "Search for an order"
+        "Rechercher une commande": "Search for an order",
+        "Commande status batterie": "Battery status command",
+        "secondes": "seconds",
+        "Configuration générale": "General configuration",
+        "Fréquence de rafraîchissement par défaut": "Default refresh rate",
+        "Intervalle en secondes utilisé par défaut pour interroger chaque chargeur, sauf si un intervalle spécifique est défini sur l'équipement.": "Interval in seconds used by default to query each charger, unless a specific interval is set on the equipment.",
+        "Charge dynamique": "Dynamic charging",
+        "Mettre la commande de pourcentage de la batterie de votre voiture électrique.": "Set the battery percentage command of your electric car."
     }
 }
