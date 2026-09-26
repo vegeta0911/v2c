@@ -6,7 +6,7 @@
 	},
 	"licence": "AGPL",
 	"author": "vegeta0911",
-	"require": "4.4",
+	"require": "4.6",
 	"os": {
 		"min": 11
 	},
