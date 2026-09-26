@@ -24,7 +24,7 @@ if (!isConnect()) {
 ?>
 <form class="form-horizontal">
     <fieldset>
-        <legend><i class="fas fa-charging-station"></i> {{Configuration générale}}</legend>
+        <legend><i class="fas fa-charging-station"></i>{{Configuration générale}}</legend>
         <div class="form-group">
             <label class="col-sm-4 control-label">{{Fréquence de rafraîchissement par défaut}}
                 <sup><i class="fas fa-question-circle floatright" title="{{Intervalle en secondes utilisé par défaut pour interroger chaque chargeur, sauf si un intervalle spécifique est défini sur l'équipement.}}"></i></sup>
@@ -37,7 +37,9 @@ if (!isConnect()) {
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">{{Veuillez choisir la méthode de communication}}</label>
+            <label class="col-sm-4 control-label">{{Commande status batterie}}
+			    <sup><i class="fas fa-question-circle floatright" title="{{Mettre la commande de pourcentage de la batterie de votre voiture électrique.}}"></i></sup>
+			</label>
 			<div class="col-sm-3">
                 <div class="input-group">
 			        <input class="configKey form-control paramAttr roundedLeft" data-l1key="reply" placeholder="" />

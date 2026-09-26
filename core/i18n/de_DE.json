@@ -1,0 +1,46 @@
+{
+    "plugins\/v2c\/core\/ajax\/v2c.ajax.php": {
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff"
+    },
+    "plugins\/v2c\/core\/class\/v2c.class.php": {
+        "Inconnu": "Unbekannt"
+    },
+    "plugins\/v2c\/desktop\/js\/v2c.js": {
+        "Afficher": "Anzeige",
+        "Choisir une icône": "Wählen Sie ein Symbol",
+        "Connexion réussie": "Einloggen erfolgreich",
+        "Historiser": "Chronik",
+        "Max": "Max",
+        "Min": "Minimum",
+        "Tester": "Prüfung",
+        "Unité": "Unit"
+    },
+    "plugins\/v2c\/desktop\/php\/v2c.php": {
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
+        "Actions": "Lager",
+        "Activer": "Aktivieren",
+        "Aucun": "Nein",
+        "Catégorie": "Kategorie",
+        "Commandes": "Befehle",
+        "Configuration": "Konfiguration",
+        "Configuration avancée": "Erweiterte Konfiguration",
+        "Dupliquer": "Duplikat",
+        "Défaut": "Standard",
+        "Etat": "Zustand",
+        "Gestion": "Management",
+        "Informations": "Information",
+        "Nom": "Name",
+        "Objet parent": "Übergeordnetes Objekt",
+        "Options": "Optionen",
+        "Port": "Hafen",
+        "Rechercher": "Suchen nach",
+        "Sauvegarder": "Zu schützen",
+        "Supprimer": "Entfernen",
+        "Timeout": "Zeitüberschreitung",
+        "Type": "Typ",
+        "Visible": "Sichtbar"
+    },
+    "plugins\/v2c\/plugin_info\/configuration.php": {
+        "Rechercher une commande": "Suchen Sie nach einer Bestellung"
+    }
+}

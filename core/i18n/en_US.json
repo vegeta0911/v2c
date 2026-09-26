@@ -1,0 +1,46 @@
+{
+    "plugins\/v2c\/core\/ajax\/v2c.ajax.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized access"
+    },
+    "plugins\/v2c\/core\/class\/v2c.class.php": {
+        "Inconnu": "Unknown"
+    },
+    "plugins\/v2c\/desktop\/js\/v2c.js": {
+        "Afficher": "Show",
+        "Choisir une icône": "Choose an icon",
+        "Connexion réussie": "Connection successful",
+        "Historiser": "Historize",
+        "Max": "Maximum",
+        "Min": "Minimum",
+        "Tester": "Test",
+        "Unité": "Unit"
+    },
+    "plugins\/v2c\/desktop\/php\/v2c.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized access",
+        "Actions": "Actions",
+        "Activer": "Enable",
+        "Aucun": "None",
+        "Catégorie": "Category",
+        "Commandes": "Commands",
+        "Configuration": "Configuration",
+        "Configuration avancée": "Advanced configuration",
+        "Dupliquer": "Duplicate",
+        "Défaut": "Default",
+        "Etat": "State",
+        "Gestion": "Management",
+        "Informations": "Information",
+        "Nom": "Name",
+        "Objet parent": "Parent object",
+        "Options": "Options",
+        "Port": "Harbor",
+        "Rechercher": "Search",
+        "Sauvegarder": "Save",
+        "Supprimer": "Delete",
+        "Timeout": "Timeout",
+        "Type": "Kind",
+        "Visible": "Visible"
+    },
+    "plugins\/v2c\/plugin_info\/configuration.php": {
+        "Rechercher une commande": "Search for an order"
+    }
+}

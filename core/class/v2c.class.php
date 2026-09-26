@@ -83,10 +83,10 @@ class v2c extends eqLogic {
             }
 
             if ($statecable == 'Branché - en charge' && $valeur != '') {
-                if ($valeur >= $eqLogic->getConfiguration('charge_limited_power', 0)) {
+                if ($valeur >= $eqLogic->getCmd('info', 'charge_limited_power')->execCmd()) {
                     $eqLogic->getCmd('action', 'pause_charge')->execCmd();
                 }
-                log::add('v2c', 'info', 'Le plugin v2c a détecté que le chargeur est branché et en charge, mais la batterie est pleine. La charge a été mise en pause.');
+                log::add('v2c', 'info', '[V2C] est branché et en charge. Le pourcentage de batterie est de ' . $valeur . '%.');
             }
         }
     }
@@ -170,7 +170,7 @@ class v2c extends eqLogic {
             throw new Exception(__('Réponse JSON invalide reçue du chargeur V2C Trydan', __FILE__));
         }
         
-        log::add('v2c', 'info', 'DATA: ' .print_r($raw,true));
+        log::add('v2c', 'debug', 'DATA: ' .print_r($raw,true));
         return $data;
     }
 
@@ -234,7 +234,7 @@ class v2c extends eqLogic {
             $this->checkAndUpdateCmd('charge_mode_label', self::chargeModeLabel($chargeMode));
         }
 
-        $this->checkAndUpdateCmd('house_power', round((float) ($data['HousePower'] ?? 0)));
+        $this->checkAndUpdateCmd('house_power', (int) ($data['HousePower'] ?? 0));
         $this->checkAndUpdateCmd('fv_power', round((float) ($data['FVPower'] ?? 0)));
         $this->checkAndUpdateCmd('battery_power', round((float) ($data['BatteryPower'] ?? 0)));
 

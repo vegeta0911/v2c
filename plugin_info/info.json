@@ -6,7 +6,7 @@
 	},
 	"licence": "AGPL",
 	"author": "vegeta0911",
-	"require": "4.4",
+	"require": "4.6",
 	"os": {
 		"min": 11
 	},
@@ -14,9 +14,16 @@
 	"hasDependency": false,
 	"hasOwnDeamon": false,
 	"maxDependancyInstallTime": 0,
-	"changelog": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2C/changelog",
-	"documentation": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2C/",
-	"language": ["fr_FR"],
+	"changelog": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2c/changelog",
+	"documentation": "https://vegeta0911.github.io/documentation/plugins/fr_FR/V2c/",
+	"language": [
+		"de_DE",
+		"en_US",
+		"es_ES",
+		"fr_FR",
+		"it_IT",
+		"pt_PT"
+	],
 	"compatibility": [
 		"diy",
 		"docker",
